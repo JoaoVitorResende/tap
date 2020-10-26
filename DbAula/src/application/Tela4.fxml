@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OperacaoController">
+   <children>
+      <BorderPane prefHeight="466.0" prefWidth="504.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefHeight="50.0" prefWidth="504.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Filtro" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Italic" size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtfiltro" onKeyReleased="#filtracontas" style="-fx-background-radius: 5;">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox prefHeight="203.0" prefWidth="504.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="contas" onMouseClicked="#selecionaconta" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="colcorrentista" prefWidth="155.0" text="Correntista" />
+                      <TableColumn fx:id="colagencia" prefWidth="154.0" text="Agencia" />
+                        <TableColumn fx:id="colsaldo" prefWidth="194.0" text="Saldo" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="504.0">
+                     <children>
+                        <RadioButton fx:id="rbsacar" mnemonicParsing="false" text="Sacar">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="c" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="rbdepositar" mnemonicParsing="false" text="Depositar" toggleGroup="$c">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="rbtransferencia" mnemonicParsing="false" text="Transferencia" toggleGroup="$c">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="60.0" prefWidth="504.0">
+                     <children>
+                        <Label text="Valor" textFill="#16d322">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtvalor" style="-fx-background-radius: 5;">
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="46.0" prefWidth="504.0">
+                     <children>
+                        <Label text="Conta" textFill="#242bbc">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtorigem" style="-fx-background-radius: 5;">
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label text="Conta destino">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtdestino">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#realizaoperacao" text="Realizar operação">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

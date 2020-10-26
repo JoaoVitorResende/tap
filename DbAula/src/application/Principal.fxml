@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="420.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PrincipalController">
+   <children>
+      <BorderPane prefHeight="420.0" prefWidth="535.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="420.0" prefWidth="173.0" style="-fx-border-color: blue;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="43.0" prefWidth="173.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#abreTela1" text="Agencia">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="173.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#abreTela2" text="Correntista">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="173.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#abreTela3" text="Conta">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="35.0" prefWidth="173.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#abreTela4" text="Operações">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane fx:id="Pane" prefHeight="317.0" prefWidth="480.0" tabClosingPolicy="UNAVAILABLE" />
+               </children>
+            </HBox>
+         </center>
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: blue;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Banco ">
+                     <font>
+                        <Font size="42.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
